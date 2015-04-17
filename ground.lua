@@ -12,7 +12,7 @@ minetest.register_node("mytreasure:buried1",{
 	paramtype = "light",
 	light_source = 2,
 	visual_scale = 0.5,
-	groups = {cracky = 2, choppy=2},
+	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -118,7 +118,7 @@ minetest.register_node("mytreasure:buried2",{
 	paramtype = "light",
 	light_source = 4,
 	visual_scale = 0.75,
-	groups = {cracky = 2, choppy=2},
+	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -224,7 +224,7 @@ minetest.register_node("mytreasure:buried3",{
 	paramtype = "light",
 	light_source = 6,
 	visual_scale = 1,
-	groups = {cracky = 2, choppy=2},
+	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
 	node_box = {
 		type = "fixed",
 		fixed = {

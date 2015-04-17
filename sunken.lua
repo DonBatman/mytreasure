@@ -11,7 +11,7 @@ minetest.register_node("mytreasure:sunken1",{
 		},
 	paramtype = "light",
 	visual_scale = 0.5,
-	groups = {cracky = 2, choppy=2,falling_node = 1},
+	groups = {cracky = 2, choppy=2,falling_node = 1, not_in_creative_inventory=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -116,7 +116,7 @@ minetest.register_node("mytreasure:sunken2",{
 		},
 	paramtype = "light",
 	visual_scale = 0.75,
-	groups = {cracky = 2, choppy=2,falling_node = 1},
+	groups = {cracky = 2, choppy=2,falling_node = 1, not_in_creative_inventory=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
@@ -220,7 +220,7 @@ minetest.register_node("mytreasure:sunken3",{
 		"mytreasure_chest1_front.png",
 		},
 	paramtype = "light",
-	groups = {cracky = 2, choppy=2,falling_node = 1},
+	groups = {cracky = 2, choppy=2,falling_node = 1, not_in_creative_inventory=1},
 	node_box = {
 		type = "fixed",
 		fixed = {
