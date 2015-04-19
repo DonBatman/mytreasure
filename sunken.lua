@@ -1,6 +1,6 @@
 minetest.register_node("mytreasure:sunken1",{
 	description = "Sunken Treasure 1",
-	drawtype = "normal",
+	drawtype = "nodebox",
 	tiles = {
 		"mytreasure_chest1_top.png",
 		"mytreasure_chest1_bottom.png",
@@ -105,7 +105,7 @@ minetest.register_ore({
 
 minetest.register_node("mytreasure:sunken2",{
 	description = "Sunken Treasure 2",
-	drawtype = "normal",
+	drawtype = "nodebox",
 	tiles = {
 		"mytreasure_chest1_top.png^mytreasure_alpha20.png",
 		"mytreasure_chest1_bottom.png^mytreasure_alpha20.png",
@@ -210,7 +210,7 @@ minetest.register_ore({
 
 minetest.register_node("mytreasure:sunken3",{
 	description = "Sunken Treasure 3",
-	drawtype = "normal",
+	drawtype = "nodebox",
 	tiles = {
 		"mytreasure_chest1_top.png^mytreasure_alpha40.png",
 		"mytreasure_chest1_bottom.png^mytreasure_alpha40.png",
