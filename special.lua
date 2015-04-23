@@ -69,37 +69,13 @@ end
 
 minetest.register_node("mytreasure:dungeon",{
 	description = "Dungeon Treasure",
-	drawtype = "nodebox",
-	tiles = {
-		"mytreasure_chest1_top.png",
-		"mytreasure_chest1_bottom.png",
-		"mytreasure_chest1_side.png",
-		"mytreasure_chest1_side.png",
-		"mytreasure_chest1_back.png",
-		"mytreasure_chest1_front.png",
-		},
+	drawtype = "mesh",
+	mesh = "mytreasure_chest.obj",
+	tiles = {"mytreasure_chestm.png"},
 	paramtype = "light",
 	light_source = 2,
 	visual_scale = 0.5,
-	groups = {cracky = 2, choppy=2, not_in_creative_inventory=0},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, 0.4375, -0.25, 0.5, 0.5, 0.25},
-			{-0.5, 0.375, -0.3125, 0.5, 0.4375, 0.3125}, 
-			{-0.5, 0.3125, -0.375, 0.5, 0.375, 0.375}, 
-			{-0.5, 0.25, -0.4375, 0.5, 0.3125, 0.4375}, 
-			{-0.5, -0.375, -0.5, 0.5, 0.25, 0.5}, 
-			{0.3125, -0.4375, -0.5, 0.5, -0.375, -0.3125}, 
-			{0.375, -0.5, -0.5, 0.5, -0.4375, -0.375}, 
-			{0.375, -0.5, 0.375, 0.5, -0.4375, 0.5}, 
-			{0.3125, -0.4375, 0.3125, 0.5, -0.375, 0.5}, 
-			{-0.5, -0.4375, 0.3125, -0.3125, -0.375, 0.5}, 
-			{-0.5, -0.5, 0.375, -0.375, -0.4375, 0.5}, 
-			{-0.5, -0.5, -0.5, -0.375, -0.4375, -0.375}, 
-			{-0.5, -0.4375, -0.5, -0.3125, -0.375, -0.3125},
-		}
-	},
+	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -178,37 +154,13 @@ minetest.register_ore({
 
 minetest.register_node("mytreasure:exploding",{
 	description = "Exploding Chest",
-	drawtype = "nodebox",
-	tiles = {
-		"mytreasure_chest1_top.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_bottom.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_side.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_side.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_back.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_front.png^mytreasure_alpha20.png",
-		},
+	drawtype = "mesh",
+	mesh = "mytreasure_chest.obj",
+	tiles = {"mytreasure_chestm.png"},
 	paramtype = "light",
 	light_source = 4,
 	visual_scale = 0.5,
 	groups = {not_in_creative_inventory=1},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, 0.4375, -0.25, 0.5, 0.5, 0.25},
-			{-0.5, 0.375, -0.3125, 0.5, 0.4375, 0.3125}, 
-			{-0.5, 0.3125, -0.375, 0.5, 0.375, 0.375}, 
-			{-0.5, 0.25, -0.4375, 0.5, 0.3125, 0.4375}, 
-			{-0.5, -0.375, -0.5, 0.5, 0.25, 0.5}, 
-			{0.3125, -0.4375, -0.5, 0.5, -0.375, -0.3125}, 
-			{0.375, -0.5, -0.5, 0.5, -0.4375, -0.375}, 
-			{0.375, -0.5, 0.375, 0.5, -0.4375, 0.5}, 
-			{0.3125, -0.4375, 0.3125, 0.5, -0.375, 0.5}, 
-			{-0.5, -0.4375, 0.3125, -0.3125, -0.375, 0.5}, 
-			{-0.5, -0.5, 0.375, -0.375, -0.4375, 0.5}, 
-			{-0.5, -0.5, -0.5, -0.375, -0.4375, -0.375}, 
-			{-0.5, -0.4375, -0.5, -0.3125, -0.375, -0.3125},
-		}
-	},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -223,37 +175,13 @@ minetest.register_node("mytreasure:exploding",{
 
 minetest.register_node("mytreasure:kaboom",{
 	description = "Kaboom",
-	drawtype = "nodebox",
-	tiles = {
-		"mytreasure_chest1_top.png^mytreasure_alphared.png",
-		"mytreasure_chest1_bottom.png^mytreasure_alphared.png",
-		"mytreasure_chest1_side.png^mytreasure_alphared.png",
-		"mytreasure_chest1_side.png^mytreasure_alphared.png",
-		"mytreasure_chest1_back.png^mytreasure_alphared.png",
-		"mytreasure_chest1_front.png^mytreasure_alphared.png",
-		},
+	drawtype = "mesh",
+	mesh = "mytreasure_chest.obj",
+	tiles = {"mytreasure_chestm.png"},
 	paramtype = "light",
 	light_source = 13,
 	visual_scale = 0.75,
 	groups = {not_in_creative_inventory=1, explody = 1},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, 0.4375, -0.25, 0.5, 0.5, 0.25},
-			{-0.5, 0.375, -0.3125, 0.5, 0.4375, 0.3125}, 
-			{-0.5, 0.3125, -0.375, 0.5, 0.375, 0.375}, 
-			{-0.5, 0.25, -0.4375, 0.5, 0.3125, 0.4375}, 
-			{-0.5, -0.375, -0.5, 0.5, 0.25, 0.5}, 
-			{0.3125, -0.4375, -0.5, 0.5, -0.375, -0.3125}, 
-			{0.375, -0.5, -0.5, 0.5, -0.4375, -0.375}, 
-			{0.375, -0.5, 0.375, 0.5, -0.4375, 0.5}, 
-			{0.3125, -0.4375, 0.3125, 0.5, -0.375, 0.5}, 
-			{-0.5, -0.4375, 0.3125, -0.3125, -0.375, 0.5}, 
-			{-0.5, -0.5, 0.375, -0.375, -0.4375, 0.5}, 
-			{-0.5, -0.5, -0.5, -0.375, -0.4375, -0.375}, 
-			{-0.5, -0.4375, -0.5, -0.3125, -0.375, -0.3125},
-		}
-	},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -279,37 +207,13 @@ minetest.register_ore({
 
 minetest.register_node("mytreasure:desert",{
 	description = "Desert Treasure",
-	drawtype = "nodebox",
-	tiles = {
-		"mytreasure_chest1_top.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_bottom.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_side.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_side.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_back.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_front.png^mytreasure_alpha40.png",
-		},
+	drawtype = "mesh",
+	mesh = "mytreasure_chest.obj",
+	tiles = {"mytreasure_chestm.png"},
 	paramtype = "light",
 	light_source = 6,
 	visual_scale = 0.5,
-	groups = {cracky = 2, choppy=2, not_in_creative_inventory=0},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, 0.4375, -0.25, 0.5, 0.5, 0.25},
-			{-0.5, 0.375, -0.3125, 0.5, 0.4375, 0.3125}, 
-			{-0.5, 0.3125, -0.375, 0.5, 0.375, 0.375}, 
-			{-0.5, 0.25, -0.4375, 0.5, 0.3125, 0.4375}, 
-			{-0.5, -0.375, -0.5, 0.5, 0.25, 0.5}, 
-			{0.3125, -0.4375, -0.5, 0.5, -0.375, -0.3125}, 
-			{0.375, -0.5, -0.5, 0.5, -0.4375, -0.375}, 
-			{0.375, -0.5, 0.375, 0.5, -0.4375, 0.5}, 
-			{0.3125, -0.4375, 0.3125, 0.5, -0.375, 0.5}, 
-			{-0.5, -0.4375, 0.3125, -0.3125, -0.375, 0.5}, 
-			{-0.5, -0.5, 0.375, -0.375, -0.4375, 0.5}, 
-			{-0.5, -0.5, -0.5, -0.375, -0.4375, -0.375}, 
-			{-0.5, -0.4375, -0.5, -0.3125, -0.375, -0.3125},
-		}
-	},
+	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
 	selection_box = {
 		type = "fixed",
 		fixed = {

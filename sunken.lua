@@ -1,35 +1,11 @@
 minetest.register_node("mytreasure:sunken1",{
 	description = "Sunken Treasure 1",
-	drawtype = "nodebox",
-	tiles = {
-		"mytreasure_chest1_top.png",
-		"mytreasure_chest1_bottom.png",
-		"mytreasure_chest1_side.png",
-		"mytreasure_chest1_side.png",
-		"mytreasure_chest1_back.png",
-		"mytreasure_chest1_front.png",
-		},
+	drawtype = "mesh",
+	mesh = "mytreasure_chest.obj",
+	tiles = {"mytreasure_chestm.png"},
 	paramtype = "light",
 	visual_scale = 0.5,
 	groups = {cracky = 2, choppy=2,falling_node = 1, not_in_creative_inventory=1},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, 0.4375, -0.25, 0.5, 0.5, 0.25},
-			{-0.5, 0.375, -0.3125, 0.5, 0.4375, 0.3125}, 
-			{-0.5, 0.3125, -0.375, 0.5, 0.375, 0.375}, 
-			{-0.5, 0.25, -0.4375, 0.5, 0.3125, 0.4375}, 
-			{-0.5, -0.375, -0.5, 0.5, 0.25, 0.5}, 
-			{0.3125, -0.4375, -0.5, 0.5, -0.375, -0.3125}, 
-			{0.375, -0.5, -0.5, 0.5, -0.4375, -0.375}, 
-			{0.375, -0.5, 0.375, 0.5, -0.4375, 0.5}, 
-			{0.3125, -0.4375, 0.3125, 0.5, -0.375, 0.5}, 
-			{-0.5, -0.4375, 0.3125, -0.3125, -0.375, 0.5}, 
-			{-0.5, -0.5, 0.375, -0.375, -0.4375, 0.5}, 
-			{-0.5, -0.5, -0.5, -0.375, -0.4375, -0.375}, 
-			{-0.5, -0.4375, -0.5, -0.3125, -0.375, -0.3125},
-		}
-	},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -105,36 +81,12 @@ minetest.register_ore({
 
 minetest.register_node("mytreasure:sunken2",{
 	description = "Sunken Treasure 2",
-	drawtype = "nodebox",
-	tiles = {
-		"mytreasure_chest1_top.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_bottom.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_side.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_side.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_back.png^mytreasure_alpha20.png",
-		"mytreasure_chest1_front.png^mytreasure_alpha20.png",
-		},
+	drawtype = "mesh",
+	mesh = "mytreasure_chest.obj",
+	tiles = {"mytreasure_chestm.png"},
 	paramtype = "light",
 	visual_scale = 0.75,
 	groups = {cracky = 2, choppy=2,falling_node = 1, not_in_creative_inventory=1},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, 0.4375, -0.25, 0.5, 0.5, 0.25},
-			{-0.5, 0.375, -0.3125, 0.5, 0.4375, 0.3125}, 
-			{-0.5, 0.3125, -0.375, 0.5, 0.375, 0.375}, 
-			{-0.5, 0.25, -0.4375, 0.5, 0.3125, 0.4375}, 
-			{-0.5, -0.375, -0.5, 0.5, 0.25, 0.5}, 
-			{0.3125, -0.4375, -0.5, 0.5, -0.375, -0.3125}, 
-			{0.375, -0.5, -0.5, 0.5, -0.4375, -0.375}, 
-			{0.375, -0.5, 0.375, 0.5, -0.4375, 0.5}, 
-			{0.3125, -0.4375, 0.3125, 0.5, -0.375, 0.5}, 
-			{-0.5, -0.4375, 0.3125, -0.3125, -0.375, 0.5}, 
-			{-0.5, -0.5, 0.375, -0.375, -0.4375, 0.5}, 
-			{-0.5, -0.5, -0.5, -0.375, -0.4375, -0.375}, 
-			{-0.5, -0.4375, -0.5, -0.3125, -0.375, -0.3125},
-		}
-	},
 	selection_box = {
 		type = "fixed",
 		fixed = {
@@ -210,35 +162,11 @@ minetest.register_ore({
 
 minetest.register_node("mytreasure:sunken3",{
 	description = "Sunken Treasure 3",
-	drawtype = "nodebox",
-	tiles = {
-		"mytreasure_chest1_top.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_bottom.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_side.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_side.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_back.png^mytreasure_alpha40.png",
-		"mytreasure_chest1_front.png^mytreasure_alpha40.png",
-		},
+	drawtype = "mesh",
+	mesh = "mytreasure_chest.obj",
+	tiles = {"mytreasure_chestm.png"},
 	paramtype = "light",
 	groups = {cracky = 2, choppy=2,falling_node = 1, not_in_creative_inventory=1},
-	node_box = {
-		type = "fixed",
-		fixed = {
-			{-0.5, 0.4375, -0.25, 0.5, 0.5, 0.25},
-			{-0.5, 0.375, -0.3125, 0.5, 0.4375, 0.3125}, 
-			{-0.5, 0.3125, -0.375, 0.5, 0.375, 0.375}, 
-			{-0.5, 0.25, -0.4375, 0.5, 0.3125, 0.4375}, 
-			{-0.5, -0.375, -0.5, 0.5, 0.25, 0.5}, 
-			{0.3125, -0.4375, -0.5, 0.5, -0.375, -0.3125}, 
-			{0.375, -0.5, -0.5, 0.5, -0.4375, -0.375}, 
-			{0.375, -0.5, 0.375, 0.5, -0.4375, 0.5}, 
-			{0.3125, -0.4375, 0.3125, 0.5, -0.375, 0.5}, 
-			{-0.5, -0.4375, 0.3125, -0.3125, -0.375, 0.5}, 
-			{-0.5, -0.5, 0.375, -0.375, -0.4375, 0.5}, 
-			{-0.5, -0.5, -0.5, -0.375, -0.4375, -0.375}, 
-			{-0.5, -0.4375, -0.5, -0.3125, -0.375, -0.3125},
-		}
-	},
 	selection_box = {
 		type = "fixed",
 		fixed = {
