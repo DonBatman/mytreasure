@@ -233,7 +233,38 @@ minetest.register_ore({
 	height_min     = -31000,
 	height_max     = -50,
 })
-
+--Cavex - places scheme
+minetest.register_node("mytreasure:cavex",{
+	description = "Cavex Treasure",
+	drawtype = "mesh",
+	mesh = "mytreasure_chest.obj",
+	tiles = {"mytreasure_chest.png"},
+	paramtype = "light",
+	paramtype2 = "facedir",
+	light_source = 2,
+	visual_scale = 0.5,
+	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
+	selection_box = {
+		type = "fixed",
+		fixed = {
+			{-0.25, -0.25, -0.25, 0.25, 0.25, 0.25},
+		}
+	},
+after_destruct = function(pos, oldnode)
+local schem = minetest.get_modpath("mytreasure").."/schems/chestx.mts"
+	minetest.place_schematic({x=pos.x-5,y=pos.y-2,z=pos.z-5},schem,0, 0, true)
+end,
+})
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "mytreasure:cavex",
+	wherein        = "air",
+	clust_scarcity = 80*80*80,
+	clust_num_ores = 1,
+	clust_size     = 1,
+	height_min     = -31000,
+	height_max     = -50,
+})
 --Exploding Chest
 
 minetest.register_node("mytreasure:exploding",{
