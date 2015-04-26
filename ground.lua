@@ -1,9 +1,20 @@
+local function coins(pos)
+  	minetest.add_particlespawner(50, 0.4,
+		pos, pos,
+		{x=2, y=0.2, z=2}, {x=-2, y=2, z=-2},
+		{x=0, y=-6, z=0}, {x=0, y=-10, z=0},
+		0.5, 2,
+		0.2, 5,
+		true, "mytreasure_coin.png")
+end
+
 minetest.register_node("mytreasure:buried1",{
 	description = "Buried Treasure 1",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
-	tiles = {"mytreasure_chestm.png"},
+	tiles = {"mytreasure_cheststone.png"},
 	paramtype = "light",
+	paramtype2 = "facedir",
 	light_source = 2,
 	visual_scale = 0.5,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
@@ -67,6 +78,8 @@ minetest.register_node("mytreasure:buried1",{
 
 		},
 	},
+on_destruct = coins,
+
 })
 
 minetest.register_ore({
@@ -75,7 +88,7 @@ minetest.register_ore({
 	wherein        = "default:stone",
 	clust_scarcity = 20*20*20,
 	clust_num_ores = 1,
-	clust_size     = 2,
+	clust_size     = 1,
 	height_min     = -31000,
 	height_max     = -150,
 })
@@ -84,8 +97,9 @@ minetest.register_node("mytreasure:buried2",{
 	description = "Buried Treasure 2",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
-	tiles = {"mytreasure_chestm.png"},
+	tiles = {"mytreasure_cheststone.png"},
 	paramtype = "light",
+	paramtype2 = "facedir",
 	light_source = 4,
 	visual_scale = 0.75,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
@@ -149,6 +163,7 @@ minetest.register_node("mytreasure:buried2",{
 
 		},
 	},
+on_destruct = coins,
 })
 
 minetest.register_ore({
@@ -157,7 +172,7 @@ minetest.register_ore({
 	wherein        = "default:stone",
 	clust_scarcity = 40*40*40,
 	clust_num_ores = 1,
-	clust_size     = 2,
+	clust_size     = 1,
 	height_min     = -31000,
 	height_max     = -150,
 })
@@ -166,8 +181,9 @@ minetest.register_node("mytreasure:buried3",{
 	description = "Buried Treasure 3",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
-	tiles = {"mytreasure_chestm.png"},
+	tiles = {"mytreasure_cheststone.png"},
 	paramtype = "light",
+	paramtype2 = "facedir",
 	light_source = 6,
 	visual_scale = 1,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
@@ -231,6 +247,7 @@ minetest.register_node("mytreasure:buried3",{
 
 		},
 	},
+on_destruct = coins,
 })
 
 minetest.register_ore({
@@ -239,7 +256,7 @@ minetest.register_ore({
 	wherein        = "default:stone",
 	clust_scarcity = 80*80*80,
 	clust_num_ores = 1,
-	clust_size     = 2,
+	clust_size     = 1,
 	height_min     = -31000,
 	height_max     = -150,
 })

@@ -1,9 +1,20 @@
+local function coins(pos)
+  	minetest.add_particlespawner(50, 0.4,
+		pos, pos,
+		{x=2, y=0.2, z=2}, {x=-2, y=2, z=-2},
+		{x=0, y=-6, z=0}, {x=0, y=-10, z=0},
+		0.5, 2,
+		0.2, 5,
+		true, "mytreasure_coin.png")
+end
+
 minetest.register_node("mytreasure:cave1",{
 	description = "Cave Treasure 1",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
-	tiles = {"mytreasure_chestm.png"},
+	tiles = {"mytreasure_chest.png"},
 	paramtype = "light",
+	paramtype2 = "facedir",
 	light_source = 2,
 	visual_scale = 0.5,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=0},
@@ -67,6 +78,7 @@ minetest.register_node("mytreasure:cave1",{
 
 		},
 	},
+on_destruct = coins,
 })
 
 minetest.register_ore({
@@ -75,7 +87,7 @@ minetest.register_ore({
 	wherein        = "air",
 	clust_scarcity = 20*20*20,
 	clust_num_ores = 1,
-	clust_size     = 2,
+	clust_size     = 1,
 	height_min     = -31000,
 	height_max     = -150,
 })
@@ -85,8 +97,9 @@ minetest.register_node("mytreasure:cave2",{
 	description = "Cave Treasure 2",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
-	tiles = {"mytreasure_chestm.png"},
+	tiles = {"mytreasure_chest.png"},
 	paramtype = "light",
+	paramtype2 = "facedir",
 	light_source = 4,
 	visual_scale = 0.75,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=0},
@@ -150,6 +163,7 @@ minetest.register_node("mytreasure:cave2",{
 
 		},
 	},
+on_destruct = coins,
 })
 
 minetest.register_ore({
@@ -158,7 +172,7 @@ minetest.register_ore({
 	wherein        = "air",
 	clust_scarcity = 40*40*40,
 	clust_num_ores = 1,
-	clust_size     = 2,
+	clust_size     = 1,
 	height_min     = -31000,
 	height_max     = -150,
 })
@@ -166,9 +180,10 @@ minetest.register_ore({
 minetest.register_node("mytreasure:cave3",{
 	description = "Cave Treasure 3",
 	drawtype = "mesh",
-	mesh = "chest.obj",
-	tiles = {"chestmap5.png"},
+	mesh = "mytreasure_chest.obj",
+	tiles = {"mytreasure_chest.png"},
 	paramtype = "light",
+	paramtype2 = "facedir",
 	light_source = 6,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=0},
 	selection_box = {
@@ -231,6 +246,7 @@ minetest.register_node("mytreasure:cave3",{
 
 		},
 	},
+on_destruct = coins,
 })
 
 minetest.register_ore({
@@ -239,7 +255,7 @@ minetest.register_ore({
 	wherein        = "air",
 	clust_scarcity = 80*80*80,
 	clust_num_ores = 1,
-	clust_size     = 2,
+	clust_size     = 1,
 	height_min     = -31000,
 	height_max     = -150,
 })
