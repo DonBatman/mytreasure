@@ -1,5 +1,18 @@
+local function calc_velocity(pos1, pos2, old_vel, power)
+	local vel = vector.direction(pos1, pos2)
+	vel = vector.normalize(vel)
+	vel = vector.multiply(vel, power)
 
-local radius = tonumber(minetest.setting_get("tnt_radius") or 3)
+	-- Divide by distance
+	local dist = vector.distance(pos1, pos2)
+	dist = math.max(dist, 1)
+	vel = vector.divide(vel, dist)
+
+	-- Add old velocity
+	vel = vector.add(vel, old_vel)
+	return vel
+end
+local radius = tonumber(minetest.setting_get("chest_radius") or 3)
 
 local function entity_physics(pos, radius)
 	radius = radius * 2
@@ -63,7 +76,7 @@ local function boom(pos)
 
   	minetest.add_particlespawner(50, 0.4,
 		pos, pos,
-		{x=2, y=0.2, z=2}, {x=-2, y=2, z=-2},
+		{x=4, y=1.2, z=4}, {x=-4, y=4, z=-4},
 		{x=0, y=-6, z=0}, {x=0, y=-10, z=0},
 		0.5, 2,
 		0.2, 5,
