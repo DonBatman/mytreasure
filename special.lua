@@ -12,6 +12,7 @@ local function calc_velocity(pos1, pos2, old_vel, power)
 	vel = vector.add(vel, old_vel)
 	return vel
 end
+
 local radius = tonumber(minetest.setting_get("chest_radius") or 3)
 
 local function entity_physics(pos, radius)
@@ -189,6 +190,7 @@ minetest.register_node("mytreasure:dungeon2",{
 	tiles = {"mytreasure_chestdungeon.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
+	drop = "",
 	light_source = 2,
 	visual_scale = 0.5,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
@@ -222,6 +224,7 @@ minetest.register_node("mytreasure:wool",{
 	tiles = {"mytreasure_chestdungeon.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
+	drop = "",
 	light_source = 2,
 	visual_scale = 0.5,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
@@ -254,6 +257,7 @@ minetest.register_node("mytreasure:cavex",{
 	tiles = {"mytreasure_chest.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
+	drop = "",
 	light_source = 2,
 	visual_scale = 0.5,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
@@ -265,7 +269,7 @@ minetest.register_node("mytreasure:cavex",{
 	},
 after_destruct = function(pos, oldnode)
 local schem = minetest.get_modpath("mytreasure").."/schems/chestx.mts"
-	minetest.place_schematic({x=pos.x-5,y=pos.y-2,z=pos.z-5},schem,0, 0, true)
+	minetest.place_schematic(pos,schem,0, 0, true)
 end,
 })
 minetest.register_ore({
