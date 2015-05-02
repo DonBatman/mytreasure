@@ -257,7 +257,7 @@ minetest.register_node("mytreasure:cavex",{
 	tiles = {"mytreasure_chest.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
-	drop = "",
+	drop = "default:stick",
 	light_source = 2,
 	visual_scale = 0.5,
 	groups = {cracky = 2, choppy=2, not_in_creative_inventory=1},
