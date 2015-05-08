@@ -165,6 +165,14 @@ minetest.register_node("mytreasure:dungeon",{
 		items = {"default:tree 99"},
 		rarity = 3,
 		},
+		{
+		items = {"default:papyrus 10"},
+		rarity = 3,
+		},
+		{
+		items = {"default:copper_lump 10"},
+		rarity = 8,
+		},
 
 		},
 	},
@@ -406,6 +414,14 @@ minetest.register_node("mytreasure:desert",{
 		{
 		items = {"default:sand 25"},
 		rarity = 20,
+		},
+		{
+		items = {"default:papyrus 10"},
+		rarity = 3,
+		},
+		{
+		items = {"default:copper_lump 10"},
+		rarity = 8,
 		},
 
 		},

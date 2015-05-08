@@ -74,6 +74,14 @@ minetest.register_node("mytreasure:sunken1",{
 		items = {"default:tree 10"},
 		rarity = 3,
 		},
+		{
+		items = {"default:papyrus 10"},
+		rarity = 3,
+		},
+		{
+		items = {"default:copper_lump 10"},
+		rarity = 8,
+		},
 
 		},
 	},
@@ -157,6 +165,14 @@ minetest.register_node("mytreasure:sunken2",{
 		items = {"default:tree 25"},
 		rarity = 3,
 		},
+		{
+		items = {"default:papyrus 20"},
+		rarity = 3,
+		},
+		{
+		items = {"default:copper_lump 25"},
+		rarity = 8,
+		},
 
 		},
 	},
@@ -238,6 +254,14 @@ minetest.register_node("mytreasure:sunken3",{
 		{
 		items = {"default:tree 99"},
 		rarity = 3,
+		},
+		{
+		items = {"default:papyrus 30"},
+		rarity = 3,
+		},
+		{
+		items = {"default:copper_lump 99"},
+		rarity = 12,
 		},
 
 		},
