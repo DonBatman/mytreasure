@@ -1,0 +1,13 @@
+
+#Enable to have treasure in caves
+mytreasure.use_caves(Enable to use cave treasure) bool true
+
+#Enable to have treasure in caves
+mytreasure.use_sunken(Enable to use sunken treasure) bool true
+
+#Enable to have treasure in caves
+mytreasure.use_ground(Enable to use underground tresure) bool true
+
+#Enable to have treasure in caves
+mytreasure.use_special(Enable to use special tresure) bool true
+
