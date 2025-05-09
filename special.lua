@@ -13,11 +13,11 @@ local function calc_velocity(pos1, pos2, old_vel, power)
 	return vel
 end
 
-local radius = tonumber(minetest.setting_get("chest_radius") or 3)
+local radius = 3
 
 local function entity_physics(pos, radius)
 	radius = radius * 2
-	local objs = minetest.get_objects_inside_radius(pos, radius)
+	local objs = core.get_objects_inside_radius(pos, radius)
 	for _, obj in pairs(objs) do
 		local obj_pos = obj:getpos()
 		local obj_vel = obj:getvelocity()
@@ -46,7 +46,7 @@ local function explode(pos, radius)
 	local drops = {}
 	local p = {}
 
-	local kaboom = minetest.get_content_id("mytreasure:kaboom")
+	local kaboom = core.get_content_id("mytreasure:kaboom")
 
 	for z = -radius, radius do
 	for y = -radius, radius do
@@ -60,7 +60,7 @@ local function explode(pos, radius)
 			p.z = pos.z + z
 			if 
 					cid == kaboom then
-		minetest.remove_node(pos)
+		core.remove_node(pos)
 			end
 		end
 		vi = vi + 1
@@ -72,10 +72,10 @@ local function explode(pos, radius)
 end
 
 local function boom(pos)
-	minetest.sound_play("tnt_explode", {pos=pos, gain=1.5, max_hear_distance=2*64})
-	minetest.get_node_timer(pos):start(0.5)
+	core.sound_play("tnt_explode", {pos=pos, gain=1.5, max_hear_distance=2*64})
+	core.get_node_timer(pos):start(0.5)
 
-  	minetest.add_particlespawner(50, 0.4,
+  	core.add_particlespawner(50, 0.4,
 		pos, pos,
 		{x=4, y=1.2, z=4}, {x=-4, y=4, z=-4},
 		{x=0, y=-6, z=0}, {x=0, y=-10, z=0},
@@ -87,7 +87,7 @@ local function boom(pos)
 	entity_physics(pos, radius)
 end
 local function coins(pos)
-  	minetest.add_particlespawner(50, 0.4,
+  	core.add_particlespawner(50, 0.4,
 		pos, pos,
 		{x=2, y=0.2, z=2}, {x=-2, y=2, z=-2},
 		{x=0, y=-6, z=0}, {x=0, y=-10, z=0},
@@ -98,7 +98,7 @@ end
 	
 
 
-minetest.register_node("mytreasure:dungeon",{
+core.register_node("mytreasure:dungeon",{
 	description = "Dungeon Treasure",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
@@ -179,19 +179,19 @@ minetest.register_node("mytreasure:dungeon",{
 on_destruct = coins,
 })
 
-minetest.register_ore({
+core.register_ore({
 	ore_type       = "scatter",
 	ore            = "mytreasure:dungeon",
 	wherein        = "default:mossycobble",
 	clust_scarcity = 30*30*30,
 	clust_num_ores = 1,
 	clust_size     = 1,
-	height_min     = -31000,
-	height_max     = -150,
+	y_min     = -31000,
+	y_max     = -150,
 })
 
 --Dungeon2 - places scheme
-minetest.register_node("mytreasure:dungeon2",{
+core.register_node("mytreasure:dungeon2",{
 	description = "Dungeon 2 Treasure",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
@@ -209,23 +209,23 @@ minetest.register_node("mytreasure:dungeon2",{
 		}
 	},
 after_destruct = function(pos, oldnode)
-local schem = minetest.get_modpath("mytreasure").."/schems/dungeon.mts"
-	minetest.place_schematic({x=pos.x-5,y=pos.y-2,z=pos.z-5},schem,0, 0, true)
+local schem = core.get_modpath("mytreasure").."/schems/dungeon.mts"
+	core.place_schematic({x=pos.x-5,y=pos.y-2,z=pos.z-5},schem,0, 0, true)
 end,
 })
-minetest.register_ore({
+core.register_ore({
 	ore_type       = "scatter",
 	ore            = "mytreasure:dungeon2",
 	wherein        = "stone",
 	clust_scarcity = 30*30*30,
 	clust_num_ores = 1,
 	clust_size     = 1,
-	height_min     = -31000,
-	height_max     = -50,
+	y_min     = -31000,
+	y_max     = -50,
 })
 
 --Wool - places scheme
-minetest.register_node("mytreasure:wool",{
+core.register_node("mytreasure:wool",{
 	description = "Wool Treasure",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
@@ -243,22 +243,22 @@ minetest.register_node("mytreasure:wool",{
 		}
 	},
 after_destruct = function(pos, oldnode)
-local schem = minetest.get_modpath("mytreasure").."/schems/wool.mts"
-	minetest.place_schematic({x=pos.x-5,y=pos.y-2,z=pos.z-5},schem,0, 0, true)
+local schem = core.get_modpath("mytreasure").."/schems/wool.mts"
+	core.place_schematic({x=pos.x-5,y=pos.y-2,z=pos.z-5},schem,0, 0, true)
 end,
 })
-minetest.register_ore({
+core.register_ore({
 	ore_type       = "scatter",
 	ore            = "mytreasure:wool",
 	wherein        = "stone",
 	clust_scarcity = 30*30*30,
 	clust_num_ores = 1,
 	clust_size     = 1,
-	height_min     = -31000,
-	height_max     = -50,
+	y_min     = -31000,
+	y_max     = -50,
 })
 --Cavex - places scheme
-minetest.register_node("mytreasure:cavex",{
+core.register_node("mytreasure:cavex",{
 	description = "Cavex Treasure",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
@@ -276,23 +276,23 @@ minetest.register_node("mytreasure:cavex",{
 		}
 	},
 after_destruct = function(pos, oldnode)
-local schem = minetest.get_modpath("mytreasure").."/schems/chestx.mts"
-	minetest.place_schematic(pos,schem,0, 0, true)
+local schem = core.get_modpath("mytreasure").."/schems/chestx.mts"
+	core.place_schematic(pos,schem,0, 0, true)
 end,
 })
-minetest.register_ore({
+core.register_ore({
 	ore_type       = "scatter",
 	ore            = "mytreasure:cavex",
 	wherein        = "air",
 	clust_scarcity = 80*80*80,
 	clust_num_ores = 1,
 	clust_size     = 1,
-	height_min     = -31000,
-	height_max     = -50,
+	y_min     = -31000,
+	y_max     = -50,
 })
 --Exploding Chest
 
-minetest.register_node("mytreasure:exploding",{
+core.register_node("mytreasure:exploding",{
 	description = "Exploding Chest",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
@@ -309,12 +309,12 @@ minetest.register_node("mytreasure:exploding",{
 		}
 	},
 	on_punch = function(pos, node, puncher, pointed_thing)
-		minetest.set_node(pos, {name="mytreasure:kaboom"})
-			minetest.get_node_timer(pos):start(2)
+		core.set_node(pos, {name="mytreasure:kaboom"})
+			core.get_node_timer(pos):start(2)
 	end
 })
 
-minetest.register_node("mytreasure:kaboom",{
+core.register_node("mytreasure:kaboom",{
 	description = "Kaboom",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
@@ -337,30 +337,30 @@ minetest.register_node("mytreasure:kaboom",{
 	
 })
 
-minetest.register_ore({
+core.register_ore({
 	ore_type       = "scatter",
 	ore            = "mytreasure:exploding",
 	wherein        = "air",
 	clust_scarcity = 60*60*60,
 	clust_num_ores = 1,
 	clust_size     = 1,
-	height_min     = -31000,
-	height_max     = -150,
+	y_min     = -31000,
+	y_max     = -150,
 })
-minetest.register_ore({
+core.register_ore({
 	ore_type       = "scatter",
 	ore            = "mytreasure:exploding",
 	wherein        = "stone",
 	clust_scarcity = 60*60*60,
 	clust_num_ores = 1,
 	clust_size     = 1,
-	height_min     = -31000,
-	height_max     = -150,
+	y_min     = -31000,
+	y_max     = -150,
 })
 
 --Desert Treasure
 
-minetest.register_node("mytreasure:desert",{
+core.register_node("mytreasure:desert",{
 	description = "Desert Treasure",
 	drawtype = "mesh",
 	mesh = "mytreasure_chest.obj",
@@ -429,15 +429,15 @@ minetest.register_node("mytreasure:desert",{
 on_destruct = coins,
 })
 
-minetest.register_ore({
+core.register_ore({
 	ore_type       = "scatter",
 	ore            = "mytreasure:cave1",
 	wherein        = "default:desert_stone",
 	clust_scarcity = 40*40*40,
 	clust_num_ores = 1,
 	clust_size     = 1,
-	height_min     = -150,
-	height_max     = -15,
+	y_min     = -150,
+	y_max     = -15,
 })
 
 
